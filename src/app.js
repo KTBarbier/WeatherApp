@@ -48,16 +48,6 @@ function formatDate() {
 }
 formatDate();
 
-//function changeDisplayCity(event) {
-//  event.preventDefault();
-//  let input = document.querySelector("#city-search");
-//  let h1 = document.querySelector("h1");
-//  h1.innerHTML = input.value;
-//}
-
-//let form = document.querySelector("form");
-//form.addEventListener("submit", changeDisplayCity);
-
 function convertToCelcius(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#current-temp");
