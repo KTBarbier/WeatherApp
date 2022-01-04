@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="search-bar">
+        <section class="sec-search-box">
+          <div class="input-group rounded search-box">
+            <input
+              id="city-search"
+              type="search"
+              autocomplete="off"
+              class="form-control btn-rounded btn-search-box"
+              placeholder="Search city..."
+              aria-describedby="search-addon"
+            />
+            <button id="submit-city">
+              <span
+                class="input-group-text border-gray search-box-icon"
+                id="search-addon"
+                >🔍
+                <i class="fas fa-search"></i>
+              </span>
+            </button>
+          </div>
+        </section>
+      </form>
+      <div id="parent">
+        <div id="narrow">
+          <h1 id="display-city"></h1>
+          <span class="todays-conditions">
+            <ul>
+              <li id="current-date"></li>
+              <li id="current-time"></li>
+            </ul>
+            <img src="images/sunny.png" class="main-icon" alt="sunny" />
+            <ul>
+              <h5>
+                <span id="current-temp"></span>
+                <a href="#" id="f-link">°F</a> |
+                <a href="#" id="c-link">°C</a>
+              </h5>
+              <li id="description"></li>
+              <li id="real-feel">feels like:</li>
+              <li id="humidity">humidity:</li>
+            </ul>
+          </span>
+        </div>
+        <!--/#narrow-->
+        <div id="wide">
+          <div class="row">
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="images/some-showers.png"
+                    alt="some showers"
+                    class="icons"
+                  />
+                  <h6>monday</h6>
+                  <p class="daily-info">
+                    scattered showers<br />75°/56° F<br />
+                    rain chance 30%
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body">
+                  <img src="images/rain.png" class="icons" alt="rain" />
+                  <h6>tuesday</h6>
+                  <p class="daily-info">
+                    rain<br />75°/56° F<br />
+                    rain chance 30%
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body">
+                  <img src="images/cloudy.png" class="icons" alt="cloudy" />
+                  <h6>wednesday</h6>
+                  <p class="daily-info">
+                    cloudy<br />75°/56° F<br />
+                    rain chance 30%
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body">
+                  <img src="images/cloudy.png" class="icons" alt="cloudy" />
+                  <h6>thursday</h6>
+                  <p class="daily-info">
+                    cloudy<br />75°/56° F<br />
+                    rain chance 30%
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body">
+                  <img src="images/sunny.png" class="icons" alet="sunny" />
+                  <h6>friday</h6>
+                  <p class="daily-info">
+                    sunny<br />75°/56° F<br />
+                    rain chance 30%
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body">
+                  <img src="images/sunny.png" class="icons" alet="sunny" />
+                  <h6>saturday</h6>
+                  <p class="daily-info">
+                    sunny<br />75°/56° F<br />
+                    rain chance 30%
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/#wide-->
+      </div>
+      <!--.parent-->
+    </div>
+    <script src="src/app.js" ;></script>
+  </body>
+</html>

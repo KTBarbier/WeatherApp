@@ -1,0 +1,61 @@
+body {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(239, 246, 249) 0%,
+    rgb(206, 239, 253) 90%
+  );
+  padding: 0 0 100% 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  padding: 65px 0 0 5px;
+}
+
+ul {
+  list-style: none;
+}
+.main-icon {
+  width: 160px;
+  padding-left: 28px;
+  padding-bottom: 15px;
+}
+.todays-conditions {
+  text-align: left;
+}
+#parent {
+  display: flex;
+}
+#narrow {
+  width: 300px;
+}
+#wide {
+  flex: 1;
+  padding: 25px 0 0 0;
+}
+.card {
+  margin: 25px 0 0 0;
+  background: transparent;
+  text-align: center;
+}
+
+.icons {
+  max-width: 75px;
+}
+#search-bar {
+  max-width: 275px;
+}
+#submit-city {
+  border: none;
+  background-color: transparent;
+  padding-top: 0;
+}
+#submit-city:hover {
+  cursor: pointer;
+  border: none;
+}
+
+#input {
+  border-radius: 4px;
+  height: 38px;
+}
