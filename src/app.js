@@ -2,28 +2,28 @@ let now = new Date();
 
 function formatDate() {
   let days = [
-    "sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
 
   let months = [
-    "january",
-    "february",
-    "march",
-    "april",
-    "may",
-    "june",
-    "july",
-    "august",
-    "september",
-    "october",
-    "nov",
-    "december",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   let day = days[now.getDay()];
@@ -82,7 +82,7 @@ function showData(response) {
   feelsLike.innerHTML =
     "Feels like: " + Math.round(response.data.main.feels_like) + "°";
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = "humidity: " + response.data.main.humidity + "%";
+  humidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
 }
 
 function search(city) {
