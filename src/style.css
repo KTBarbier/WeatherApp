@@ -15,7 +15,7 @@ h1 {
 ul {
   list-style: none;
 }
-.main-icon {
+#main-icon {
   width: 160px;
   padding-left: 28px;
   padding-bottom: 15px;
