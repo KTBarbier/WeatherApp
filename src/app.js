@@ -51,15 +51,14 @@ formatDate();
 function convertToCelcius(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#current-temp");
-  let temp = tempElement.innerHTML;
-  tempElement.innerHTML = Math.round(((temp - 32) * 5) / 9);
+  let celciusTemperature = ((fahrenheitTemp - 32) * 5) / 9;
+  tempElement.innerHTML = Math.round(celciusTemperature);
 }
 
 function convertToFahrenheit(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#current-temp");
-  let temp = tempElement.innerHTML;
-  tempElement.innerHTML = Math.round((temp * 9) / 5 + 32);
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
 let celciusLink = document.querySelector("#c-link");
@@ -68,22 +67,23 @@ celciusLink.addEventListener("click", convertToCelcius);
 let fahrenheitLink = document.querySelector("#f-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-//Week 5: searching city and receiving accurate weather data
-
 function showData(response) {
   console.log(response);
   let city = document.querySelector("h1");
-  city.innerHTML = response.data.name;
   let mainTempDisplay = document.querySelector("#current-temp");
-  mainTempDisplay.innerHTML = Math.round(response.data.main.temp);
   let conditions = document.querySelector("#description");
-  conditions.innerHTML = response.data.weather[0].main;
   let feelsLike = document.querySelector("#real-feel");
+  let humidity = document.querySelector("#humidity");
+  let iconElement = document.querySelector("#main-icon");
+
+  fahrenheitTemp = response.data.main.temp;
+
+  city.innerHTML = response.data.name;
+  mainTempDisplay.innerHTML = Math.round(fahrenheitTemp);
+  conditions.innerHTML = response.data.weather[0].main;
   feelsLike.innerHTML =
     "Feels like: " + Math.round(response.data.main.feels_like) + "°";
-  let humidity = document.querySelector("#humidity");
   humidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
-  let iconElement = document.querySelector("#main-icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -105,5 +105,7 @@ function handleSubmit(event) {
 
 let searchForm = document.querySelector("#search-bar");
 searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitTemp = null;
 
 search("Houston");
