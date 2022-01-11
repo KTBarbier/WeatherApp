@@ -79,6 +79,7 @@ function showData(response) {
   let conditions = document.querySelector("#description");
   let feelsLike = document.querySelector("#real-feel");
   let humidity = document.querySelector("#humidity");
+  let windSpeed = document.querySelector("#wind-speed");
   let iconElement = document.querySelector("#main-icon");
 
   fahrenheitTemp = response.data.main.temp;
@@ -89,6 +90,8 @@ function showData(response) {
   feelsLike.innerHTML =
     "Feels like: " + Math.round(response.data.main.feels_like) + "°";
   humidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
+  windSpeed.innerHTML =
+    "Wind speed: " + Math.round(response.data.wind.speed) + " mph";
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
