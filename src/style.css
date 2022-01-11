@@ -71,3 +71,22 @@ footer {
   text-decoration: none;
   color: black;
 }
+div.container {
+  max-width: 60%;
+  background-color: #fff;
+  padding-top: 20px;
+  margin-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 1px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  border-style: double;
+  border-color: rgb(223, 223, 223);
+}
+
+.input-group > .custom-select:not(:last-child),
+.input-group > .form-control:not(:last-child) {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
