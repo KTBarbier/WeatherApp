@@ -53,12 +53,17 @@ function convertToCelcius(event) {
   let tempElement = document.querySelector("#current-temp");
   let celciusTemperature = ((fahrenheitTemp - 32) * 5) / 9;
   tempElement.innerHTML = Math.round(celciusTemperature);
+  //remove active from f
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
 }
 
 function convertToFahrenheit(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#current-temp");
   tempElement.innerHTML = Math.round(fahrenheitTemp);
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
 let celciusLink = document.querySelector("#c-link");
