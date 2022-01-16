@@ -1,29 +1,21 @@
 let now = new Date();
 
 function formatDate() {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let months = [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
 
   let day = days[now.getDay()];
@@ -117,3 +109,37 @@ searchForm.addEventListener("submit", handleSubmit);
 let fahrenheitTemp = null;
 
 search("Houston");
+
+displayForecast();
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="col-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <img
+                        src="images/some-showers.png"
+                        alt="some showers"
+                        class="icons"
+                      />
+                      <h6>${day}</h6>
+                      <p class="daily-info">
+                        scattered showers<br />75°/56° F<br />
+                        rain chance 30%
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}

@@ -22,7 +22,7 @@ ul {
   display: flex;
 }
 #narrow {
-  width: 300px;
+  width: 360px;
 }
 #wide {
   flex: 1;
@@ -37,9 +37,11 @@ ul {
 .icons {
   max-width: 75px;
 }
+
 #search-bar {
   max-width: 275px;
 }
+
 #submit-city {
   border: none;
   background-color: transparent;
