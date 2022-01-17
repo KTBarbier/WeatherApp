@@ -28,20 +28,6 @@ function formatDate() {
 }
 formatDate();
 
-function formatAMPM(date) {
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? "pm" : "am";
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  var strTime = hours + ":" + minutes + " " + ampm;
-  return strTime;
-}
-
-let liTime = document.querySelector("#current-time");
-liTime.innerHTML = formatAMPM(new Date());
-
 function getForecast(coordinates) {
   let apiKey = "65d2465365ff42d62007012b620803eb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
@@ -71,6 +57,20 @@ function showData(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? "pm" : "am";
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    var strTime = hours + ":" + minutes + " " + ampm;
+    return strTime;
+  }
+
+  let liTime = document.querySelector("#current-time");
+  liTime.innerHTML = formatAMPM(new Date());
 
   getForecast(response.data.coord);
 }
