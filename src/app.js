@@ -125,7 +125,7 @@ function displayForecast(response) {
     <p class="daily-info">
     ${forecastDay.weather[0].main}<br />${Math.round(
           forecastDay.temp.max
-        )}° / ${Math.round(forecastDay.temp.min)}° F<br />
+        )}° / ${Math.round(forecastDay.temp.min)}°<br />
       </p>
       </div>
       </div>
