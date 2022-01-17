@@ -40,30 +40,6 @@ function formatDate() {
 }
 formatDate();
 
-//function convertToCelcius(event) {
-//  event.preventDefault();
-//  let tempElement = document.querySelector("#current-temp");
-//  let celciusTemperature = ((fahrenheitTemp - 32) * 5) / 9;
-//  tempElement.innerHTML = Math.round(celciusTemperature);
-//remove active from f
-//  fahrenheitLink.classList.remove("active");
-//  celciusLink.classList.add("active");
-//}
-
-//function convertToFahrenheit(event) {
-//  event.preventDefault();
-//  let tempElement = document.querySelector("#current-temp");
-//  tempElement.innerHTML = Math.round(fahrenheitTemp);
-//  celciusLink.classList.remove("active");
-//  fahrenheitLink.classList.add("active");
-//}
-
-//let celciusLink = document.querySelector("#c-link");
-//celciusLink.addEventListener("click", convertToCelcius);
-
-//let fahrenheitLink = document.querySelector("#f-link");
-//fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "65d2465365ff42d62007012b620803eb";
