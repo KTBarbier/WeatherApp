@@ -40,29 +40,29 @@ function formatDate() {
 }
 formatDate();
 
-function convertToCelcius(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#current-temp");
-  let celciusTemperature = ((fahrenheitTemp - 32) * 5) / 9;
-  tempElement.innerHTML = Math.round(celciusTemperature);
-  //remove active from f
-  fahrenheitLink.classList.remove("active");
-  celciusLink.classList.add("active");
-}
+//function convertToCelcius(event) {
+//  event.preventDefault();
+//  let tempElement = document.querySelector("#current-temp");
+//  let celciusTemperature = ((fahrenheitTemp - 32) * 5) / 9;
+//  tempElement.innerHTML = Math.round(celciusTemperature);
+//remove active from f
+//  fahrenheitLink.classList.remove("active");
+//  celciusLink.classList.add("active");
+//}
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#current-temp");
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
+//function convertToFahrenheit(event) {
+//  event.preventDefault();
+//  let tempElement = document.querySelector("#current-temp");
+//  tempElement.innerHTML = Math.round(fahrenheitTemp);
+//  celciusLink.classList.remove("active");
+//  fahrenheitLink.classList.add("active");
+//}
 
-let celciusLink = document.querySelector("#c-link");
-celciusLink.addEventListener("click", convertToCelcius);
+//let celciusLink = document.querySelector("#c-link");
+//celciusLink.addEventListener("click", convertToCelcius);
 
-let fahrenheitLink = document.querySelector("#f-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
+//let fahrenheitLink = document.querySelector("#f-link");
+//fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -85,7 +85,7 @@ function showData(response) {
   fahrenheitTemp = response.data.main.temp;
 
   city.innerHTML = response.data.name;
-  mainTempDisplay.innerHTML = Math.round(fahrenheitTemp);
+  mainTempDisplay.innerHTML = Math.round(fahrenheitTemp) + "°";
   conditions.innerHTML = response.data.weather[0].main;
   feelsLike.innerHTML =
     "Feels like: " + Math.round(response.data.main.feels_like) + "°";
