@@ -23,22 +23,24 @@ function formatDate() {
   let todaysDate = now.getDate();
   let year = now.getFullYear();
 
-  let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-
-  let minute = now.getMinutes();
-  if (minute < 10) {
-    minute = `0${minute}`;
-  }
-
   let liToday = document.querySelector("#current-date");
   liToday.innerHTML = `${day} ${month} ${todaysDate} ${year}`;
-  let liTime = document.querySelector("#current-time");
-  liTime.innerHTML = `${hour}:${minute}`;
 }
 formatDate();
+
+function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? "pm" : "am";
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  var strTime = hours + ":" + minutes + " " + ampm;
+  return strTime;
+}
+
+let liTime = document.querySelector("#current-time");
+liTime.innerHTML = formatAMPM(new Date());
 
 function getForecast(coordinates) {
   console.log(coordinates);
