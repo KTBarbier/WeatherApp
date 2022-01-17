@@ -43,15 +43,12 @@ let liTime = document.querySelector("#current-time");
 liTime.innerHTML = formatAMPM(new Date());
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "65d2465365ff42d62007012b620803eb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
 function showData(response) {
-  console.log(response);
   let city = document.querySelector("h1");
   let mainTempDisplay = document.querySelector("#current-temp");
   let conditions = document.querySelector("#description");
